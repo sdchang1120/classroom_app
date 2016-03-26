@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="user_id" style="display: none"><%= user.id %></p>
+<h1><%= user.first_name %>'s Rooms</h1>
+
+<% if (usertrue) { %>
+  <h3>Add a New Room</h3>
+  <form action="/users/<%= user.id %>/newroom" method="POST">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="description" placeholder="description">
+    <input type="submit">
+  </form>
+<% } %>
+
+<% if (usertrue) { %>
+  <form action="/users/<%= user.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button id="delete-button">Delete Account</button>
+  </form>
+<% } %>
+  </body>
+</html>
