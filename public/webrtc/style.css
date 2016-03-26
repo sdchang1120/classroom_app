@@ -1,0 +1,73 @@
+#videos {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+}
+
+#chatbox {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  z-index: 1;
+}
+
+#chatinput {
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #CCCCCC;
+  border-radius: 0px 0px 5px 5px;
+  font: 300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;
+  height: 40px;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
+  width: 277px;
+}
+
+#messages {
+  overflow: scroll;
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px 5px 0px 0px;
+  font: 300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;
+  height: 400px;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
+  width: 255px;
+}
+
+.flip {
+-webkit-transform: rotateY(180deg);
+}
+
+.buttonBox {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 1;
+}
+.button {
+  border-radius:5px;
+  border:1px solid black;
+  display:inline-block;
+  color:#777777;
+  font-family:arial;
+  font-size:15px;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #ffffff;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color:black;
+  color: white;
+  text-shadow: none;
+}
+.button:active {
+  position:relative;
+  top:1px;
+}
