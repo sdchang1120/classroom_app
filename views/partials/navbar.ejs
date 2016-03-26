@@ -1,0 +1,11 @@
+<nav>
+  <a href="/">HOME</a>
+  <a href="/rooms">ALL ROOMS</a>
+  <a href="/users">ALL USERS</a>
+  <% if (login) { %>
+    <div class="right-nav-div">
+      <li><span>Welcome, <a href="/users/<%=userLogin.id%>/profile"><%=userLogin.first_name%></a> | </span></li>
+      <li><a id="logout" href="/users/logout">Logout</a></li>
+    </div>
+  <% } %>
+</nav>
