@@ -1,0 +1,14 @@
+<% include ../partials/head %>
+<% include ../partials/navbar %>
+<div class="profile">
+  <div class="profile-header">
+    <h2>User Profile</h2>
+    <% if (usertrue) { %>
+      <a href="/users/<%=user.id%>/profile/edit">Edit</a>
+    <% } %>
+  </div>
+  <h4>Name: </h4><%=user.first_name%> <%=user.last_name%>
+  <h4>Username: </h4><%=user.username%>
+  <h4>Email: </h4><%=user.email%>
+</div>
+<% include ../partials/footer %>

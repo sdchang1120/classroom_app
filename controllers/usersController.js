@@ -21,6 +21,31 @@ router.get('/json', function(req, res) {
   });
 });
 
+// USER'S PROFILE
+router.get('/:id/profile', isLoggedIn, function(req, res) {
+  req.params.id == req.user.id ? res.locals.usertrue = true : res.locals.usertrue = false;
+  res.locals.login = req.isAuthenticated();
+	User.findById(req.params.id, function(err, user) {
+    res.render('users/profile.ejs', {user: user, userLogin: req.user});
+  })
+})
+
+// EDIT USER'S PROFILE
+router.get('/:id/profile/edit', isLoggedIn, function(req, res) {
+  res.locals.login = req.isAuthenticated();
+  User.findById(req.params.id, function(err, user) {
+    res.render('users/editprofile.ejs', {user: user, userLogin: req.user});
+  });
+});
+
+// UPDATE USER'S PROFILE
+router.put('/:id/profile', isLoggedIn, function(req, res) {
+  res.locals.login = req.isAuthenticated();
+  User.findByIdAndUpdate(req.params.id, req.body, function(err) {
+    res.redirect('/users/' + req.params.id + '/profile');
+  });
+});
+
 // LOGOUT
 router.get('/logout', function(req, res) {
   req.logout();
