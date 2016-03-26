@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Brandon';
+  src: url('/font/Brandon_med.otf');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Brandon';
+}
+
+nav {
+  background: #eaeaea;
+  padding: 10px;
+  text-align: center;
+}
+
+h1, h3 {
+  text-transform: uppercase;
+}
+
+nav a {
+  text-decoration: none;
+  color: #999;
+  margin: 0 10px;
+}
+
+.right-nav-div {
+  position: absolute;
+  top: 11px;
+  right: 15px;
+}
+
+.right-nav-div li {
+  display: inline-block;
+}
+
+a:hover {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: #999;
+}
