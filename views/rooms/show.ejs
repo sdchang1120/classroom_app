@@ -15,10 +15,34 @@
     <p><%= room.description %><p>
 
     <video id="localVideo"></video>
-    <strong>Other Users:</strong><br>
+    <strong>Other Users <span id="peer-vid-len"></span>:</strong><br>
     <div id="remoteVideos"></div>
 
   </div>
+
+
+  <ul class="pages">
+    <li id="chatbox">
+      <div class="chatArea">
+        <ul class="messages"></ul>
+      </div>
+      <input class="inputMessage" placeholder="Type here..."/>
+    </li>
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">What's your nickname?</h3>
+        <input class="usernameInput" type="text" maxlength="14" />
+      </div>
+    </li>
+  </ul>
+
+
+  <!-- <div id="chat-box">
+    <ul id="messages"></ul>
+    <form action="">
+     <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+  </div> -->
 
   <!-- <div id="remoteVideos"></div> -->
 

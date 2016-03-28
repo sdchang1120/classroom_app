@@ -41,10 +41,6 @@ webrtc.on('videoRemoved', function (video, peer) {
 });
 
 
-
-
-
-
 function initFullScreen() {
   var button = document.getElementById("fullscreen");
   button.addEventListener('click', function(event) {
@@ -53,3 +49,11 @@ function initFullScreen() {
     elem.webkitRequestFullScreen();
   });
 }
+
+// var peervids = document.getElementById('remoteVideos').children;
+// console.log(peervids);
+// var peervidlen = peervids.length;
+// console.log(peervidlen);
+// var peerdiv = document.getElementById('peer-vid-len');
+// console.log(peerdiv);
+// peerdiv.innerHTML = peervidlen;

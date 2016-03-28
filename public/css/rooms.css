@@ -7,10 +7,193 @@ html, body {
 .side-panel {
   width: 200px;
   height: 100%;
-  margin-top: 43px;
+  /*margin-top: 43px;*/
   border-right: 1px solid #eaeaea;
   display: inline-block;
   position: absolute;
   left: 0;
   height: 100%;
+  /*background: azure;*/
+}
+
+#chat-box {
+  height: 100%;
+}
+
+#messages form {
+  background: #000;
+  padding: 3px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+#messages form input {
+  border: 0;
+  padding: 10px;
+  width: 90%;
+  margin-right: .5%;
+}
+#messages form button {
+  width: 9%;
+  background: rgb(130, 224, 255);
+  border: none;
+  padding: 10px;
+}
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#messages li {
+  padding: 5px 10px;
+}
+#messages li:nth-child(odd) {
+  background: #eee;
+}
+
+
+
+/*================================CHATROOM============================*/
+ul {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+/* Sorta like dot leaders but a line is fine */
+/*li.message:after {
+  content: "";
+  background: black;
+  position: absolute;
+  left: 25%;
+  height: 1px;
+  width: 50%;
+  margin-top: 30px;
+}*/
+
+span.timestamp {
+  float: right;
+}
+
+/* Pages */
+
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  width: calc(100% - 200px);
+}
+
+.page {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+#chatbox {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+
+/* Login Page */
+
+.login.page {
+  background-color: #000;
+}
+
+.login.page .form {
+  height: 100px;
+  margin-top: -100px;
+  position: absolute;
+
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+.login.page .form .usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.login.page .title {
+  font-size: 200%;
+}
+
+.login.page .usernameInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+.login.page .title, .login.page .usernameInput {
+  color: #fff;
+  font-weight: 100;
+}
+
+/* Chat page */
+
+.chat.page {
+  display: none;
+}
+
+/* Font */
+
+.messages {
+  font-size: 15px;
+}
+
+.inputMessage {
+  font-size: 15px;
+}
+
+.log {
+  color: gray;
+  font-size: 15px;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Messages */
+
+.chatArea {
+  height: 100%;
+  /*padding-bottom: 60px;*/
+}
+
+.messages {
+  height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 10px 20px 10px 20px;
+}
+
+.message.typing .messageBody {
+  color: gray;
+}
+
+.username {
+  float: left;
+  font-weight: 700;
+  overflow: hidden;
+  padding-right: 15px;
+  text-align: right;
+}
+
+/* Input */
+
+.inputMessage {
+  border: 1px solid #000;
+  outline: none;
+  padding-left: 10px;
+  position: relative;
 }
