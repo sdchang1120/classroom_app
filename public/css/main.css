@@ -16,7 +16,7 @@ html, body {
 }
 
 nav {
-  background: #eaeaea;
+  background: #11BAEE;
   padding: 10px;
   text-align: center;
 }
@@ -29,8 +29,12 @@ h1, h2, h3 {
 
 nav a {
   text-decoration: none;
-  color: #777;
+  color: #AEDEF5;
   margin: 0 10px;
+}
+
+nav a:hover, nav span {
+  color: white;
 }
 
 .right-nav-div {
@@ -76,4 +80,11 @@ input {
   margin: 5px;
   font-size: 15px;
   width: 200px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+}
+
+.input:focus {
+  /*outline: none;*/
+  border: 1px solid #09B2E9 !important;
 }

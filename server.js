@@ -10,10 +10,13 @@ var express        = require('express'),
     session        = require('express-session'),
     // server         = require('http').createServer(app),
     // webRTC         = require('webrtc.io').listen(server),
-    webRTC         = require('webrtc.io').listen(8001),
+    webRTC         = require('webrtc.io').listen(8080),
     mongoUri       = process.env.MONGOLAB_URI || 'mongodb://localhost/classroom_app',
     port           = process.env.PORT || 3000,
-    app            = express();
+    app            = express(),
+    http           = require('http').Server(app),
+    io             = require('socket.io')(http);
+
 
 // ==============================
 //           MIDDLEWARE
@@ -47,31 +50,31 @@ app.use(methodOverride(function(req, res){
 }));
 
 // WEBRTC
-webRTC.rtc.on('chat_msg', function(data, socket) {
-  var roomList = webRTC.rtc.rooms[data.room] || [];
-
-  for (var i = 0; i < roomList.length; i++) {
-    var socketId = roomList[i];
-
-    if (socketId !== socket.id) {
-      var soc = webRTC.rtc.getSocket(socketId);
-
-      if (soc) {
-        soc.send(JSON.stringify({
-          "eventName": "receive_chat_msg",
-          "data": {
-            "messages": data.messages,
-            "color": data.color
-          }
-        }), function(error) {
-          if (error) {
-            console.log(error);
-          }
-        });
-      }
-    }
-  }
-});
+// webRTC.rtc.on('chat_msg', function(data, socket) {
+//   var roomList = webRTC.rtc.rooms[data.room] || [];
+//
+//   for (var i = 0; i < roomList.length; i++) {
+//     var socketId = roomList[i];
+//
+//     if (socketId !== socket.id) {
+//       var soc = webRTC.rtc.getSocket(socketId);
+//
+//       if (soc) {
+//         soc.send(JSON.stringify({
+//           "eventName": "receive_chat_msg",
+//           "data": {
+//             "messages": data.messages,
+//             "color": data.color
+//           }
+//         }), function(error) {
+//           if (error) {
+//             console.log(error);
+//           }
+//         });
+//       }
+//     }
+//   }
+// });
 
 // ==============================
 //          CONTROLLERS
@@ -90,14 +93,22 @@ app.get('/', function(req, res) {
 	res.redirect('/users');
 });
 
+
+io.on('connection', function(socket) {
+
+  io.emit('boioing', "test massage");
+
+});
+
 // ==============================
 //           CONNECTION
 // ==============================
 
-mongoose.connection.once('open', function() {
-  app.listen(port, function() {
-    console.log('=========================');
-    console.log('listening on port:', port);
-    console.log('=========================');
-  });
-});
+// mongoose.connection.once('open', function() {
+  http.listen(port);
+  // app.listen(port, function() {
+  //   console.log('=========================');
+  //   console.log('listening on port:', port);
+  //   console.log('=========================');
+  // });
+// });

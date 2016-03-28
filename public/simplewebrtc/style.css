@@ -10,17 +10,23 @@
 }*/
 
 #remoteVideos {
-  display: inline-block;
-  height: 100%;
+  /*position: absolute;
+  bottom: 0;
+  right: 0;*/
+  height: 100px;
+  width: 200px;
+  white-space: nowrap;
+  overflow-y:hidden;
 }
 
 #remoteVideos video {
-  height: 30%;
+  height: 100%;
   display: inline-block;
+  overflow:hidden;
 }
 
 #localVideo {
-  width: 250px;
+  width: 200px;
   position: relative;
   bottom: 0;
   left:0;
