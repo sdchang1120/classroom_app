@@ -45,8 +45,8 @@
 
 .buttonBox {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 50px;
+  right: 5px;
   z-index: 1;
 }
 .button {

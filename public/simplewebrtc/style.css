@@ -1,0 +1,27 @@
+/*.videoContainer {
+    position: relative;
+    width: 200px;
+    height: 150px;
+}
+.videoContainer video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}*/
+
+#remoteVideos {
+  display: inline-block;
+  height: 100%;
+}
+
+#remoteVideos video {
+  height: 30%;
+  display: inline-block;
+}
+
+#localVideo {
+  width: 250px;
+  position: relative;
+  bottom: 0;
+  left:0;
+}

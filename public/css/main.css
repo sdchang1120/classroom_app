@@ -1,5 +1,10 @@
 @font-face {
   font-family: 'Brandon';
+  src: url('/font/Brandon_light.otf');
+}
+
+@font-face {
+  font-family: 'Brandon Med';
   src: url('/font/Brandon_med.otf');
 }
 
@@ -16,13 +21,15 @@ nav {
   text-align: center;
 }
 
-h1, h3 {
+h1, h2, h3 {
   text-transform: uppercase;
+  font-family: 'Brandon';
+  letter-spacing: 2px;
 }
 
 nav a {
   text-decoration: none;
-  color: #999;
+  color: #777;
   margin: 0 10px;
 }
 
@@ -36,11 +43,37 @@ nav a {
   display: inline-block;
 }
 
+a {
+  font-family: 'Brandon Med';
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #777;
+}
+
 a:hover {
   color: black;
 }
 
-a {
-  text-decoration: none;
-  color: #999;
+button, input[type="submit"] {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: 'Brandon';
+  font-size: 15px;
+  background: #09B2E9;
+  color: white;
+  width: 200px;
+}
+
+button:hover, input[type="submit"]:hover {
+  opacity: .75;
+}
+
+input {
+  font-family: 'Brandon';
+  padding: 5px;
+  margin: 5px;
+  font-size: 15px;
+  width: 200px;
 }

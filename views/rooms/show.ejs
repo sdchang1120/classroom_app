@@ -1,22 +1,40 @@
 <% include ../partials/head %>
 <% include ../partials/navbar %>
-<body onload="init()">
-<h1><%= room.name %></h1>
-<p><%= room.description %><p>
 
-<div id="videos">
+<!-- <video height="300" id="localVideo"></video>
+<div id="remotesVideos"></div> -->
+
+<!-- <body onload="init()"> -->
+
+<body>
+
+  <div class="side-panel" id="videos">
+
+    <h1><%= room.name %></h1>
+    <h3>Description:</h3>
+    <p><%= room.description %><p>
+
+    <video id="localVideo"></video>
+
+  </div>
+
+  <div id="remoteVideos"></div>
+
+<!-- <div class="buttonBox">
+  <div id="fullscreen" class="button">Enter Full Screen</div>
+</div> -->
+
+<% include ../partials/footer %>
+
+<!-- <div id="videos">
   <video id="you" class="flip" autoplay width="263" height="200" style="position: absolute; left: 0px; bottom: 0px;"></video>
-</div>
+</div> -->
 
-<div id="chatbox">
+
+<!-- <div id="chatbox">
   <div id="hideShowMessages" class="button">toggle chat</div>
   <div id="messages"></div>
   <input id="chatinput" type="text" placeholder="Message:"/>
-</div>
+</div> -->
 
-<div class="buttonBox">
-  <div id="fullscreen" class="button">Enter Full Screen</div>
-  <!-- <div id="newRoom" class="button">Create A New Room</div> -->
-</div>
-
-<% include ../partials/footer %>
+<!-- <div id="newRoom" class="button">Create A New Room</div> -->

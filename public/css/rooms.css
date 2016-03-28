@@ -1,0 +1,16 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.side-panel {
+  width: 250px;
+  height: 100%;
+  margin-top: 43px;
+  border-right: 1px solid #eaeaea;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
