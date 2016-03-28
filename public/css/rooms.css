@@ -152,9 +152,9 @@ span.timestamp {
   font-size: 15px;
 }
 
-.inputMessage {
+/*.inputMessage {
   font-size: 15px;
-}
+}*/
 
 .log {
   color: gray;
@@ -192,8 +192,10 @@ span.timestamp {
 /* Input */
 
 .inputMessage {
-  border: 1px solid #000;
   outline: none;
   padding-left: 10px;
-  position: relative;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 200px;
 }
