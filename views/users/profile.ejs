@@ -1,8 +1,9 @@
 <% include ../partials/head %>
 <% include ../partials/navbar %>
+
 <div class="profile">
   <div class="profile-header">
-    <h2>User Profile</h2>
+    <h1>User Profile</h1>
     <% if (usertrue) { %>
       <a href="/users/<%=user.id%>/profile/edit">Edit</a>
     <% } %>

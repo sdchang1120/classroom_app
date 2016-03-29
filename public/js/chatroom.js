@@ -157,8 +157,9 @@ $(function() {
     var d = new Date(dateObj);
     var hours = d.getHours();
     var minutes = d.getMinutes().toString();
+    var seconds = d.getSeconds().toString();
 
-    return hours + ":" + (minutes.length === 1 ? '0'+minutes : minutes);
+    return (hours > 12 ? hours-12 : hours) + ":" + (minutes.length === 1 ? '0'+minutes : minutes) + ":" + (seconds.length === 1 ? '0'+seconds : seconds) + (hours > 12 ? ' PM' : ' AM');
   }
 
   // Updates the typing event

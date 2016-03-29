@@ -49,33 +49,6 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
-// WEBRTC
-// webRTC.rtc.on('chat_msg', function(data, socket) {
-//   var roomList = webRTC.rtc.rooms[data.room] || [];
-//
-//   for (var i = 0; i < roomList.length; i++) {
-//     var socketId = roomList[i];
-//
-//     if (socketId !== socket.id) {
-//       var soc = webRTC.rtc.getSocket(socketId);
-//
-//       if (soc) {
-//         soc.send(JSON.stringify({
-//           "eventName": "receive_chat_msg",
-//           "data": {
-//             "messages": data.messages,
-//             "color": data.color
-//           }
-//         }), function(error) {
-//           if (error) {
-//             console.log(error);
-//           }
-//         });
-//       }
-//     }
-//   }
-// });
-
 // ==============================
 //          CONTROLLERS
 // ==============================
@@ -175,10 +148,39 @@ app.get('/', function(req, res) {
 // ==============================
 
 // mongoose.connection.once('open', function() {
-  http.listen(port);
+http.listen(port, function() {
   // app.listen(port, function() {
-  //   console.log('=========================');
-  //   console.log('listening on port:', port);
-  //   console.log('=========================');
+  console.log('=========================');
+  console.log('listening on port:', port);
+  console.log('=========================');
   // });
+});
+// });
+
+
+// WEBRTC
+// webRTC.rtc.on('chat_msg', function(data, socket) {
+//   var roomList = webRTC.rtc.rooms[data.room] || [];
+//
+//   for (var i = 0; i < roomList.length; i++) {
+//     var socketId = roomList[i];
+//
+//     if (socketId !== socket.id) {
+//       var soc = webRTC.rtc.getSocket(socketId);
+//
+//       if (soc) {
+//         soc.send(JSON.stringify({
+//           "eventName": "receive_chat_msg",
+//           "data": {
+//             "messages": data.messages,
+//             "color": data.color
+//           }
+//         }), function(error) {
+//           if (error) {
+//             console.log(error);
+//           }
+//         });
+//       }
+//     }
+//   }
 // });
