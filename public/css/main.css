@@ -24,8 +24,9 @@ nav {
 
 h1, h2, h3, h4 {
   text-transform: uppercase;
-  font-family: 'Brandon';
+  font-family: 'Brandon Med';
   letter-spacing: 2px;
+  color: #11BAEE;
 }
 
 nav a {
