@@ -29,16 +29,16 @@ $(function() {
   function addParticipantsMessage (data) {
     var message = '';
     if (data.numUsers === 1) {
-      message += "there's 1 participant";
+      message += "1 user online";
     } else {
-      message += "there're " + data.numUsers + " participants";
+      message += data.numUsers + " users online";
     }
     log(message);
   }
 
   // Sets the client's username
   function setUsername () {
-    username = cleanInput($usernameInput.val().trim());
+    username = cleanInput($usernameInput.val());
 
     // If the username is valid
     if (username) {
@@ -160,7 +160,8 @@ $(function() {
     var minutes = d.getMinutes().toString();
     var seconds = d.getSeconds().toString();
 
-    return (hours > 12 ? hours-12 : hours) + ":" + (minutes.length === 1 ? '0'+minutes : minutes) + ":" + (seconds.length === 1 ? '0'+seconds : seconds) + (hours > 12 ? ' PM' : ' AM');
+    // converting military time to standard time
+    return (hours > 12 ? hours-12 : hours) + ":" + (minutes.length === 1 ? '0'+minutes : minutes) + ":" + (seconds.length === 1 ? '0'+seconds : seconds) + (hours >= 12 ? ' PM' : ' AM');
   }
 
   // Updates the typing event
