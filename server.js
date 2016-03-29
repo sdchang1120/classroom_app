@@ -92,7 +92,7 @@ io.on('connection', function (socket) {
       message: data,
       timestamp: Date.now()
     });
-    console.log('I sent it');
+    console.log('message sent!');
   });
 
   // when the client emits 'add user', this listens and executes
