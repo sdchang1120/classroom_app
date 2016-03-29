@@ -66,15 +66,6 @@ app.get('/', function(req, res) {
 	res.redirect('/users');
 });
 
-
-// io.on('connection', function(socket) {
-//
-//   io.emit('boioing', "test massage");
-//
-// });
-
-
-
 // CHATROOM
 
 // usernames which are currently connected to the chat
@@ -141,25 +132,31 @@ io.on('connection', function (socket) {
       });
     }
   });
-});
 
+  // DRAWING BOARD
 
-
-
-// Listen for incoming connections from clients
-io.sockets.on('connection', function (socket) {
-
-	// Start listening for mouse move events
+  // Start listening for mouse move events
 	socket.on('mousemove', function (data) {
 
 		// This line sends the event (broadcasts it)
 		// to everyone except the originating client.
 		socket.broadcast.emit('moving', data);
 	});
+
+
 });
 
-
-
+// // Listen for incoming connections from clients
+// io.sockets.on('connection', function (socket) {
+//
+// 	// Start listening for mouse move events
+// 	socket.on('mousemove', function (data) {
+//
+// 		// This line sends the event (broadcasts it)
+// 		// to everyone except the originating client.
+// 		socket.broadcast.emit('moving', data);
+// 	});
+// });
 
 // ==============================
 //           CONNECTION
@@ -173,6 +170,13 @@ http.listen(port, function() {
   console.log('=========================');
   // });
 });
+// });
+
+
+// io.on('connection', function(socket) {
+//
+//   io.emit('boioing', "test massage");
+//
 // });
 
 
