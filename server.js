@@ -181,15 +181,15 @@ io.on('connection', function (socket) {
 //           CONNECTION
 // ==============================
 
-// mongoose.connection.once('open', function() {
-http.listen(port, function() {
-  // app.listen(port, function() {
-  console.log('=========================');
-  console.log('listening on port:', port);
-  console.log('=========================');
-  // });
+mongoose.connection.once('open', function() {
+  http.listen(port, function() {
+    // app.listen(port, function() {
+    console.log('=========================');
+    console.log('listening on port:', port);
+    console.log('=========================');
+    // });
+  });
 });
-// });
 
 
 // io.on('connection', function(socket) {
