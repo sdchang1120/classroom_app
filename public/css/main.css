@@ -1,3 +1,21 @@
+/* Menu stuff */
+
+.menu-link {
+  display: none;
+}
+
+#menu {
+  display: none;
+  text-align: center;
+  z-index: 1;
+}
+
+#menu li {
+  display: block;
+  margin: 0 auto;
+}
+
+
 @font-face {
   font-family: 'Brandon';
   src: url('/font/Brandon_light.otf');
@@ -31,7 +49,7 @@ nav {
   width: 100%;
   background: #11BAEE;
   padding: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 h1, h2, h3, h4 {
@@ -125,3 +143,18 @@ input {
   color: #AEDEF5;
   width: 100%;
 }*/
+
+/* media query for tablets and mobile */
+@media screen and (max-width: 768px) {
+
+  .desktop-menu {
+    visibility: hidden;
+  }
+
+  .menu-link {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
+
+}

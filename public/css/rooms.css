@@ -8,6 +8,10 @@
    left: 200px;
 }
 
+/* drawing board & video behind menu */
+#drawing, video {
+  z-index: -1;
+}
 
 
 .side-panel {
@@ -182,8 +186,6 @@ span.timestamp {
 
 
 
-
-
 /* ========== DRAWING BOARD ========== */
 
 #paper {
@@ -194,6 +196,75 @@ span.timestamp {
   box-sizing: border-box;
   background: #eaeaea;
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  #drawing {
+
+  }
+
+	.side-panel {
+    width: 50%;
+    height: 50%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: white;
+    overflow: scroll;
+    box-sizing: border-box;
+    border-right: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+  }
+
+  #room-name, #desc {
+    display: none;
+  }
+
+  #chatbox {
+    width: 50%;
+    height: calc(50% - 34px);
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 34px;
+    background: white;
+    box-sizing: border-box;
+    border-left: none;
+    border-top: 1px solid #eaeaea;
+  }
+
+  #localVideo {
+    position: fixed;
+    top: 50px;
+    left: 5px;
+    opacity: .75;
+    width: 100px;
+  }
+
+  #remoteVideos {
+    width: 100%;
+  }
+  #remoteVideos video {
+    width: 100px;
+  }
+
+  .usernameInput {
+    width: 100%;
+  }
+
+  .inputMessage {
+    width: 50%;
+  }
+
+  #drawing {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 50%;
+  }
+
 }
 
 

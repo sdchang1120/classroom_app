@@ -1,5 +1,14 @@
 $(function() {
 
+  var $menu = $('#menu');
+  var $menulink = $('.menu-link');
+
+  $menulink.click(function() {
+    // $menulink.toggleClass('active');
+    $menu.slideToggle(700);
+    return false;
+  });
+
   // var socket = io();
   //
   // socket.on('boioing', function(msg) {

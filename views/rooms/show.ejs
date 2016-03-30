@@ -4,33 +4,25 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/simplewebrtc/style.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/css/rooms.css" media="screen" title="no title" charset="utf-8">
     <!-- <link rel="stylesheet" href="/webrtc/style.css" media="screen" title="no title" charset="utf-8"> -->
     <script src="/js/jquery-2.2.0.min.js" charset="utf-8"></script>
     <script src="/socket.io/socket.io.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
-    <script src="/js/chatroom.js" charset="utf-8"></script>
+    <!-- <script src="/js/chatroom.js" charset="utf-8"></script> -->
     <script src="/js/draw.js" charset="utf-8"></script>
+    <script src="/js/chatroom.js" charset="utf-8"></script>
     <!-- <script src="/webrtc/webrtc.io.js" charset="utf-8"></script>
     <script src="/webrtc/script.js" charset="utf-8"></script> -->
     <!-- SIMPLE WEBRTC -->
     <script src="https://simplewebrtc.com/latest-v2.js"></script>
-    <link rel="stylesheet" href="/simplewebrtc/style.css" media="screen" title="no title" charset="utf-8">
+    <!-- <link rel="stylesheet" href="/simplewebrtc/style.css" media="screen" title="no title" charset="utf-8"> -->
     <script src="/simplewebrtc/script.js" charset="utf-8"></script>
 
   </head>
 
-  <nav>
-    <a href="/">HOME</a>
-    <a href="/rooms">ALL ROOMS</a>
-    <a href="/users">ALL USERS</a>
-    <% if (login) { %>
-      <div class="right-nav-div">
-        <li><span>Welcome, <a href="/users/<%=userLogin.id%>/profile"><%=userLogin.first_name%></a> | </span></li>
-        <li><a id="logout" href="/users/logout">Logout</a></li>
-      </div>
-    <% } %>
-  </nav>
+  <% include ../partials/navbar %>
 
 
 <body>
@@ -52,12 +44,12 @@
   <div class="side-panel">
     <!-- <br>Online <img class="blink" src="http://www.everythinghaitian.com/images/icons/online.png" alt="" /> -->
     <br>Online <img class="blink" src="http://blenderartists.org/design/baorg2012dark/images/statusicon/user-online.png" />
-    <h2><%= room.name %></h2>
-    <p><span style="text-transform: uppercase; letter-spacing: 2px; font-family: 'Brandon Med'; color: #11BAEE;">Description:</span><br><%= room.description %><p>
+    <h2 id="room-name"><%= room.name %></h2>
+    <p id="desc"><span style="text-transform: uppercase; letter-spacing: 2px; font-family: 'Brandon Med'; color: #11BAEE;">Description:</span><br><%= room.description %><p>
     <span style="font-style: italic; color: #999;">Enter name to start chatting:</span><br>
     <input class="usernameInput" maxlength="15" value="Anon">
     <video id="localVideo"></video>
-    <strong>Other Users</strong><br>
+    <br><strong>Other Users</strong><br>
     <div id="remoteVideos"></div>
 
   </div>
