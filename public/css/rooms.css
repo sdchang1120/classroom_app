@@ -246,9 +246,6 @@ span.timestamp {
   #remoteVideos {
     width: 100%;
   }
-  #remoteVideos video {
-    width: 100px;
-  }
 
   .usernameInput {
     width: 100%;
