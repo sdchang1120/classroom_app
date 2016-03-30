@@ -1,18 +1,40 @@
+#drawing {
+   display: inline-block;
+   /*border: 1px solid #cecece;*/
+   background: #eaeaea;
+   box-sizing: border-box;
+   position: absolute;
+   top: 43px;
+   left: 200px;
+}
+
+
+
 .side-panel {
   width: 200px;
-  height: 100%;
   /*margin-top: 43px;*/
   border-right: 1px solid #eaeaea;
-  display: inline-block;
-  position: absolute;
+  /*display: inline-block;*/
+  position: fixed;
   left: 0;
+  height: calc(100% - 43px);
   height: 100%;
-  /*background: azure;*/
+  box-sizing: border-box;
+}
+
+#chatbox {
+  width: 200px;
+  /*margin-top: 43px;*/
+  border-left: 1px solid #eaeaea;
+  position: fixed;
+  right: 0;
+  height: calc(100% - 80px);
+  box-sizing: border-box;
 }
 
 /* ========== CHATROOM ========== */
 
-ul {
+ul, li {
   list-style: none;
   word-wrap: break-word;
 }
@@ -36,14 +58,14 @@ span.timestamp {
 
 /* Pages */
 
-.pages {
+/*.pages {
   height: 100%;
   margin: 0;
   padding: 0;
   position: absolute;
   right: 0;
   width: calc(100% - 200px);
-}
+}*/
 
 /*.page {
   height: 100%;
@@ -51,14 +73,6 @@ span.timestamp {
   right: 0;
   width: 100%;
 }*/
-
-#chatbox {
-  width: 200px;
-  position: absolute;
-  right: 0;
-  border-left: 1px solid #eaeaea;
-  height: calc(100% - 80px);
-}
 
 /* Font */
 

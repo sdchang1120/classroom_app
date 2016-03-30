@@ -13,4 +13,11 @@ $(function() {
     window.location = url;
 	});
 
+  // input hover effect
+  $('input').hover(function() {
+    $(this).css('border-color', '#09B2E9');
+  }, function() {
+    $(this).css('border-color', '#eaeaea');
+  });
+
 })

@@ -71,7 +71,10 @@ app.get('/', function(req, res) {
 // usernames which are currently connected to the chat
 var usernames = {};
 var numUsers = 0;
+// keep track of all lines drawn
+var line_history = [];
 
+// handler for new incoming connections
 io.on('connection', function (socket) {
   var addedUser = false;
 
@@ -133,15 +136,31 @@ io.on('connection', function (socket) {
     }
   });
 
+
+
   // DRAWING BOARD
 
-  // Start listening for mouse move events
-	socket.on('mousemove', function (data) {
+  // // Start listening for mouse move events
+	// socket.on('mousemove', function (data) {
+  //
+	// 	// This line sends the event (broadcasts it)
+	// 	// to everyone except the originating client.
+	// 	socket.broadcast.emit('moving', data);
+	// });
 
-		// This line sends the event (broadcasts it)
-		// to everyone except the originating client.
-		socket.broadcast.emit('moving', data);
-	});
+
+  // first send new client drawing history
+   for (var i in line_history) {
+      socket.emit('draw_line', { line: line_history[i] } );
+   }
+
+   // add handler for message type "draw_line".
+   socket.on('draw_line', function (data) {
+      // add received line to history
+      line_history.push(data.line);
+      // emit newly recevied line to all clients
+      io.emit('draw_line', { line: data.line });
+   });
 
 
 });

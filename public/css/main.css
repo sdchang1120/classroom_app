@@ -8,15 +8,27 @@
   src: url('/font/Brandon_med.otf');
 }
 
-html, body {
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  position: relative;
+}
+
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   text-align: center;
   font-family: 'Brandon';
+  margin-top: 43px;
+  margin-bottom: 43px;
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background: #11BAEE;
   padding: 10px;
   text-align: center;
@@ -104,3 +116,12 @@ input {
 .profile h4 {
   margin-bottom: 0px;
 }
+
+/*footer {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  background: #11BAEE;
+  color: #AEDEF5;
+  width: 100%;
+}*/

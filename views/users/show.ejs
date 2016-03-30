@@ -10,7 +10,12 @@
     <input type="text" name="name" placeholder="name">
     <input type="text" name="description" placeholder="description">
     <input type="submit">
-  </form>
+  </form><br>
+<% } %>
+
+<!-- User's Rooms -->
+<% for (var i=0; i < user.rooms.length; i++) { %>
+  <a href="/rooms/<%= user.rooms[i]._id %>"><%= user.rooms[i].name %></a>
 <% } %>
 
 <% include ../partials/footer %>

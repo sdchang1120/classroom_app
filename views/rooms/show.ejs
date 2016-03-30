@@ -37,15 +37,19 @@
 
 
 
-  <div id="cursors">
+  <canvas id="drawing"></canvas>
+
+
+
+  <!-- <div id="cursors"> -->
 	  <!-- The mouse pointers will be created here -->
-	</div>
+	<!-- </div> -->
 
-		<canvas id="paper" width="1900" height="1000">
+		<!-- <canvas id="paper" width="1900" height="1000">
 			Your browser needs to support canvas for this to work!
-		</canvas>
+		</canvas> -->
 
-  <div class="side-panel" id="videos">
+  <div class="side-panel">
     <!-- <br>Online <img class="blink" src="http://www.everythinghaitian.com/images/icons/online.png" alt="" /> -->
     <br>Online <img class="blink" src="http://blenderartists.org/design/baorg2012dark/images/statusicon/user-online.png" />
     <h2><%= room.name %></h2>
@@ -58,14 +62,14 @@
 
   </div>
 
-  <ul class="pages">
-    <li id="chatbox">
+  <!-- <ul class="pages"> -->
+    <div id="chatbox">
       <div class="chatArea">
-        <ul class="messages"></ul>
+        <div class="messages"></div>
       </div>
       <input class="inputMessage" placeholder="Type here..."/>
-    </li>
-  </ul>
+    </div>
+  <!-- </ul> -->
 
 
 <% include ../partials/footer %>
