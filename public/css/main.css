@@ -232,7 +232,7 @@ input {
   }*/
 
   #about-page, #signup-page, #login-page, #rooms-page, #users-page, .right-nav-div {
-    visibility: hidden;
+    display: none;
   }
 
   .menu-link {
