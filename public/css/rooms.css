@@ -4,7 +4,7 @@
    background: #eaeaea;
    box-sizing: border-box;
    position: absolute;
-   top: 43px;
+   top: 46px;
    left: 200px;
 }
 
@@ -16,19 +16,19 @@
 
 .side-panel {
   width: 200px;
-  /*margin-top: 43px;*/
+  /*margin-top: 46px;*/
   border-right: 1px solid #eaeaea;
   /*display: inline-block;*/
   position: fixed;
   left: 0;
-  height: calc(100% - 43px);
+  height: calc(100% - 46px);
   height: 100%;
   box-sizing: border-box;
 }
 
 #chatbox {
   width: 200px;
-  /*margin-top: 43px;*/
+  /*margin-top: 46px;*/
   border-left: 1px solid #eaeaea;
   position: fixed;
   right: 0;

@@ -4,25 +4,25 @@
     <!-- <img id="menu-button" src="http://52media.ca/images/menu-icon-small.png" alt="" /> -->
   </a>
   <div class="desktop-menu">
-    <a href="/">HOME</a>
-    <a href="/about">About</a>
+    <a id="home-page" href="/" style="font-size: 18px">OurSpace</a>
+    <a id="about-page" href="/about">About</a>
     <% if (!login) { %>
-      <a href="/signup">Sign Up</a>
-      <a href="/login">Log In</a>
+      <a id="signup-page" href="/signup">Sign Up</a>
+      <a id="login-page" href="/login">Log In</a>
     <% } %>
     <!-- <a href="/rooms">ALL ROOMS</a>
     <a href="/users">ALL USERS</a> -->
     <% if (login) { %>
-      <a href="/rooms">ALL ROOMS</a>
-      <a href="/users">ALL USERS</a>
+      <a id="rooms-page" href="/rooms">All Rooms</a>
+      <a id="users-page" href="/users">All Users</a>
       <div class="right-nav-div">
-        <li><span>Welcome, <a href="/users/<%=userLogin.id%>/profile"><%=userLogin.first_name%></a> | </span></li>
+        <li><span id="welcome-user">Welcome, <a href="/users/<%=userLogin.id%>/profile"><%=userLogin.first_name%></a> | </span></li>
         <li><a id="logout" href="/users/logout">Logout</a></li>
       </div>
     <% } %>
   </div>
   <div id="menu">
-    <li><a href="/">Home</a></li>
+    <!-- <li><a href="/">Home</a></li> -->
     <li><a href="/about">About</a></li>
     <% if (!login) { %>
       <li><a href="/signup">Sign Up</a></li>
