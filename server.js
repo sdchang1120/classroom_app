@@ -62,54 +62,11 @@ app.use('/rooms', roomsController);
 usersController = require('./controllers/usersController');
 app.use('/users', usersController);
 
-// ==============================
-//          STATIC PAGES
-// ==============================
-
-// HOME PAGE
-app.get('/', function(req, res) {
-  res.locals.login = req.isAuthenticated();
-  User.find(function(err, users) {
-  	res.render('index.ejs', { users: users, userLogin: req.user });
-  });
-});
-
-// ABOUT PAGE
-app.get('/about', function(req, res) {
-  res.locals.login = req.isAuthenticated();
-  User.find(function(err, users) {
-  	res.render('static/about.ejs', { users: users, userLogin: req.user });
-  });
-});
-
-// SIGNUP PAGE
-app.get('/signup', function(req, res) {
-  res.locals.login = req.isAuthenticated();
-  User.find(function(err, users) {
-    res.render('static/signup.ejs', { users: users, userLogin: req.user });
-  });
-});
-
-// LOGIN PAGE
-app.get('/login', function(req, res) {
-  res.locals.login = req.isAuthenticated();
-  User.find(function(err, users) {
-    res.render('static/login.ejs', { users: users, userLogin: req.user });
-  });
-});
-
-// MIDDLEWARE TO CHECK LOGIN STATUS
-function isLoggedIn(req, res, next) {
-	// console.log('isLoggedIn middleware');
-  if (req.isAuthenticated()) {
-  	return next();
-  } else {
-  	res.redirect('/');
-  }
-}
+staticsController = require('./controllers/staticsController');
+app.use('/', staticsController);
 
 // ==============================
-//     CHATROOM SOCKET
+//        SOCKET VARIABLES
 // ==============================
 
 // usernames which are currently connected to the chat
@@ -120,6 +77,11 @@ var line_history = [];
 
 // handler for new incoming connections
 io.on('connection', function (socket) {
+
+  // ==============================
+  //        CHATROOM SOCKET
+  // ==============================
+
   var addedUser = false;
 
   // when the client emits 'new message', this listens and executes
