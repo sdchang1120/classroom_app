@@ -15,6 +15,15 @@
   margin: 0 auto;
 }
 
+@font-face {
+  font-family: 'Fontello';
+  src: url('/font/fontello.ttf');
+}
+
+#plus-icon, #menu-icon, #link-icon {
+  font-family: 'Fontello';
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Brandon';
