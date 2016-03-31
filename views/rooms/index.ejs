@@ -1,13 +1,14 @@
 <% include ../partials/head %>
 <% include ../partials/navbar %>
-<body>
-<h1>All Rooms</h1>
+<div class="container fadeIn">
+	<h1>All Rooms</h1>
 
-<div id="all-rooms-container">
-	<% for (var i=0; i < rooms.length; i++) { %>
-		<div class="location">
-			<p><a href="/rooms/<%=rooms[i]._id%>"><%= rooms[i].name %></a></p>
-		</div>
-	<% } %>
+	<div id="all-rooms-container">
+		<% for (var i=0; i < rooms.length; i++) { %>
+			<div class="location">
+				<p><a href="/rooms/<%=rooms[i]._id%>"><%= rooms[i].name %></a></p>
+			</div>
+		<% } %>
+	</div>
 </div>
 <% include ../partials/footer %>

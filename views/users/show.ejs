@@ -1,21 +1,21 @@
 <% include ../partials/head %>
 <% include ../partials/navbar %>
-<body>
-<p id="user_id" style="display: none"><%= user.id %></p>
-<h1><%= user.first_name %>'s Rooms</h1>
+<div class="container fadeIn">
+  <p id="user_id" style="display: none"><%= user.id %></p>
+  <h1><%= user.first_name %>'s Rooms</h1>
 
-<% if (usertrue) { %>
-  <h3>Add a New Room</h3>
-  <form action="/users/<%= user.id %>/newroom" method="POST">
-    <input type="text" name="name" placeholder="name">
-    <input type="text" name="description" placeholder="description">
-    <input type="submit">
-  </form><br>
-<% } %>
+  <% if (usertrue) { %>
+    <h3>Add a New Room</h3>
+    <form action="/users/<%= user.id %>/newroom" method="POST">
+      <input type="text" name="name" placeholder="name">
+      <input type="text" name="description" placeholder="description">
+      <input type="submit">
+    </form><br>
+  <% } %>
 
-<!-- User's Rooms -->
-<% for (var i=0; i < user.rooms.length; i++) { %>
-  <a href="/rooms/<%= user.rooms[i]._id %>"><%= user.rooms[i].name %></a>
-<% } %>
-
+  <!-- User's Rooms -->
+  <% for (var i=0; i < user.rooms.length; i++) { %>
+    <a href="/rooms/<%= user.rooms[i]._id %>"><%= user.rooms[i].name %></a>
+  <% } %>
+</div>
 <% include ../partials/footer %>

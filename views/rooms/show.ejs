@@ -22,49 +22,42 @@
     <script src="/simplewebrtc/script.js" charset="utf-8"></script>
 
   </head>
+  <body>
 
   <% include ../partials/navbar %>
+  <div class="container fadeIn">
+    <canvas id="drawing"></canvas>
 
+    <!-- <div id="cursors"> -->
+  	  <!-- The mouse pointers will be created here -->
+  	<!-- </div> -->
 
-<body>
+  		<!-- <canvas id="paper" width="1900" height="1000">
+  			Your browser needs to support canvas for this to work!
+  		</canvas> -->
 
+    <div class="side-panel">
+      <!-- <br>Online <img class="blink" src="http://www.everythinghaitian.com/images/icons/online.png" alt="" /> -->
+      <br>Online <img class="blink" src="http://blenderartists.org/design/baorg2012dark/images/statusicon/user-online.png" />
+      <h2 id="room-name"><%= room.name %></h2>
+      <p id="desc"><span style="text-transform: uppercase; letter-spacing: 2px; font-family: 'Brandon Med'; color: #11BAEE;">Description:</span><br><%= room.description %><p>
+      <span style="font-style: italic; color: #999;">Enter name to start chatting:</span><br>
+      <input class="usernameInput" maxlength="15" value="Anon">
+      <video id="localVideo"></video>
+      <br><strong>Other Users</strong><br>
+      <div id="remoteVideos"></div>
 
-
-  <canvas id="drawing"></canvas>
-
-
-
-  <!-- <div id="cursors"> -->
-	  <!-- The mouse pointers will be created here -->
-	<!-- </div> -->
-
-		<!-- <canvas id="paper" width="1900" height="1000">
-			Your browser needs to support canvas for this to work!
-		</canvas> -->
-
-  <div class="side-panel">
-    <!-- <br>Online <img class="blink" src="http://www.everythinghaitian.com/images/icons/online.png" alt="" /> -->
-    <br>Online <img class="blink" src="http://blenderartists.org/design/baorg2012dark/images/statusicon/user-online.png" />
-    <h2 id="room-name"><%= room.name %></h2>
-    <p id="desc"><span style="text-transform: uppercase; letter-spacing: 2px; font-family: 'Brandon Med'; color: #11BAEE;">Description:</span><br><%= room.description %><p>
-    <span style="font-style: italic; color: #999;">Enter name to start chatting:</span><br>
-    <input class="usernameInput" maxlength="15" value="Anon">
-    <video id="localVideo"></video>
-    <br><strong>Other Users</strong><br>
-    <div id="remoteVideos"></div>
-
-  </div>
-
-  <!-- <ul class="pages"> -->
-    <div id="chatbox">
-      <div class="chatArea">
-        <div class="messages"></div>
-      </div>
-      <input class="inputMessage" placeholder="Type here..."/>
     </div>
-  <!-- </ul> -->
 
-
+    <!-- <ul class="pages"> -->
+      <div id="chatbox">
+        <div class="chatArea">
+          <div class="messages"></div>
+        </div>
+        <input class="inputMessage" placeholder="Type here..."/>
+      </div>
+    <!-- </ul> -->
+  </div>
 <% include ../partials/footer %>
 
 
