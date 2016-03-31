@@ -61,6 +61,11 @@ nav {
   text-align: left;
 }
 
+.container {
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
 h1, h2, h3, h4 {
   text-transform: uppercase;
   font-family: 'Brandon Med';

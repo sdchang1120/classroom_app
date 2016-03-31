@@ -19,7 +19,6 @@ var express        = require('express'),
 
     User           = require('./models/users');
 
-
 // ==============================
 //           MIDDLEWARE
 // ==============================
@@ -63,7 +62,11 @@ app.use('/rooms', roomsController);
 usersController = require('./controllers/usersController');
 app.use('/users', usersController);
 
-// root redirects to users index
+// ==============================
+//          STATIC PAGES
+// ==============================
+
+// HOME PAGE
 app.get('/', function(req, res) {
   res.locals.login = req.isAuthenticated();
   User.find(function(err, users) {
@@ -71,25 +74,33 @@ app.get('/', function(req, res) {
   });
 });
 
-// root redirects to users index
-app.get('/signup', function(req, res) {
+// ABOUT PAGE
+app.get('/about', function(req, res) {
   res.locals.login = req.isAuthenticated();
   User.find(function(err, users) {
-    res.render('auth/signup.ejs', { users: users, userLogin: req.user });
+  	res.render('static/about.ejs', { users: users, userLogin: req.user });
   });
 });
 
-// root redirects to users index
+// SIGNUP PAGE
+app.get('/signup', function(req, res) {
+  res.locals.login = req.isAuthenticated();
+  User.find(function(err, users) {
+    res.render('static/signup.ejs', { users: users, userLogin: req.user });
+  });
+});
+
+// LOGIN PAGE
 app.get('/login', function(req, res) {
   res.locals.login = req.isAuthenticated();
   User.find(function(err, users) {
-    res.render('auth/login.ejs', { users: users, userLogin: req.user });
+    res.render('static/login.ejs', { users: users, userLogin: req.user });
   });
 });
 
 // MIDDLEWARE TO CHECK LOGIN STATUS
 function isLoggedIn(req, res, next) {
-	console.log('isLoggedIn middleware');
+	// console.log('isLoggedIn middleware');
   if (req.isAuthenticated()) {
   	return next();
   } else {
@@ -97,7 +108,9 @@ function isLoggedIn(req, res, next) {
   }
 }
 
-// CHATROOM
+// ==============================
+//     CHATROOM SOCKET
+// ==============================
 
 // usernames which are currently connected to the chat
 var usernames = {};
@@ -167,9 +180,9 @@ io.on('connection', function (socket) {
     }
   });
 
-
-
-  // DRAWING BOARD
+  // ==============================
+  //      DRAWING BOARD SOCKET
+  // ==============================
 
   // // Start listening for mouse move events
 	// socket.on('mousemove', function (data) {
