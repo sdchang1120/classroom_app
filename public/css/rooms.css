@@ -6,6 +6,9 @@
    position: absolute;
    top: 46px;
    left: 200px;
+   height: 100%;
+   width: calc(100% - 400px);
+   box-sizing: border-box;
 }
 
 /* drawing board & video behind menu */
@@ -196,9 +199,9 @@ span.timestamp {
 }
 
 @media screen and (max-width: 768px) {
-  #drawing {
+  /*#drawing {
 
-  }
+  }*/
 
 	.side-panel {
     width: 50%;
