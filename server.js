@@ -17,6 +17,8 @@ var express        = require('express'),
     http           = require('http').Server(app),
     io             = require('socket.io')(http);
 
+    User           = require('./models/users');
+
 
 // ==============================
 //           MIDDLEWARE
@@ -63,8 +65,37 @@ app.use('/users', usersController);
 
 // root redirects to users index
 app.get('/', function(req, res) {
-	res.redirect('/users');
+  res.locals.login = req.isAuthenticated();
+  User.find(function(err, users) {
+  	res.render('index.ejs', { users: users, userLogin: req.user });
+  });
 });
+
+// root redirects to users index
+app.get('/signup', function(req, res) {
+  res.locals.login = req.isAuthenticated();
+  User.find(function(err, users) {
+    res.render('auth/signup.ejs', { users: users, userLogin: req.user });
+  });
+});
+
+// root redirects to users index
+app.get('/login', function(req, res) {
+  res.locals.login = req.isAuthenticated();
+  User.find(function(err, users) {
+    res.render('auth/login.ejs', { users: users, userLogin: req.user });
+  });
+});
+
+// MIDDLEWARE TO CHECK LOGIN STATUS
+function isLoggedIn(req, res, next) {
+	console.log('isLoggedIn middleware');
+  if (req.isAuthenticated()) {
+  	return next();
+  } else {
+  	res.redirect('/');
+  }
+}
 
 // CHATROOM
 

@@ -49,7 +49,7 @@ router.put('/:id/profile', isLoggedIn, function(req, res) {
 // LOGOUT
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/users');
+  res.redirect('/');
 });
 
 // USERS - SHOW - IF LOGGED IN

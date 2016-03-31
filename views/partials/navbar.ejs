@@ -2,9 +2,15 @@
   <a href="#menu" class="menu-link"><img id="menu-button" src="http://52media.ca/images/menu-icon-small.png" alt="" /></a>
   <div class="desktop-menu">
     <a href="/">HOME</a>
-    <a href="/rooms">ALL ROOMS</a>
-    <a href="/users">ALL USERS</a>
+    <% if (!login) { %>
+      <a href="/signup">Sign Up</a>
+      <a href="/login">Log In</a>
+    <% } %>
+    <!-- <a href="/rooms">ALL ROOMS</a>
+    <a href="/users">ALL USERS</a> -->
     <% if (login) { %>
+      <a href="/rooms">ALL ROOMS</a>
+      <a href="/users">ALL USERS</a>
       <div class="right-nav-div">
         <li><span>Welcome, <a href="/users/<%=userLogin.id%>/profile"><%=userLogin.first_name%></a> | </span></li>
         <li><a id="logout" href="/users/logout">Logout</a></li>
@@ -13,9 +19,13 @@
   </div>
   <div id="menu">
     <li><a href="/">Home</a></li>
+    <% if (!login) { %>
+      <li><a href="/signup">Sign Up</a></li>
+      <li><a href="/login">Log In</a></li>
+    <% } %>
+    <% if (login) { %>
     <li><a href="/rooms">All Rooms</a></li>
     <li><a href="/users">All Users</a></li>
-    <% if (login) { %>
     <li><a href="/users/<%=userLogin.id%>/profile">Profile</a></span></li>
     <li><a id="logout" href="/users/logout">Logout</a></li>
     <% } %>
