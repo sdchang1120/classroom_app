@@ -16,13 +16,10 @@
 
 .side-panel {
   width: 200px;
-  /*margin-top: 46px;*/
   border-right: 1px solid #eaeaea;
-  /*display: inline-block;*/
   position: fixed;
   left: 0;
-  height: calc(100% - 46px);
-  height: 100%;
+  height: calc(100% - 0px);
   box-sizing: border-box;
 }
 
