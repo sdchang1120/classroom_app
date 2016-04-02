@@ -26,7 +26,7 @@
   margin-top: 5px;
   background-color:#00B2FF;
   opacity: .75;
-  padding:5px;
+  padding: 5px 10px;
   color:#fff;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -35,6 +35,9 @@
 .controls button {
   background: white;
   color: #00B2FF;
+  width: 50px;
+  padding: 0;
+  margin-left: 5px;
 }
 
 #drawing {
@@ -60,6 +63,7 @@
   width: 200px;
   border-right: 1px solid #eaeaea;
   position: fixed;
+  top: 46px;
   left: 0;
   height: calc(100% - 0px);
   box-sizing: border-box;
@@ -70,6 +74,7 @@
   /*margin-top: 46px;*/
   border-left: 1px solid #eaeaea;
   position: fixed;
+  top: 46px;
   right: 0;
   height: calc(100% - 80px);
   box-sizing: border-box;

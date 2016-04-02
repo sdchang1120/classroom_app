@@ -27,6 +27,7 @@ $(function(){
 
    // register mouse event handlers
 	 $('#drawing').mousedown(function (e) {
+		 console.log('mouse down:', e)
     mouse.click = true;
   });
 
