@@ -1,3 +1,42 @@
+/* DRAWING BOARD */
+
+/*.drawing-wrapper {
+  position: relative;
+  height: 100vh;
+  width: calc(100% - 400px);
+  top: 46px;
+  left: 200px;
+}
+
+#drawing {
+   background: #eaeaea;
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   height: 100%;
+   width: calc(100% - 400px);
+   box-sizing: border-box;
+} */
+
+.controls {
+  display: inline-block;
+  /*position: absolute;*/
+  /*top:5px;
+  left:5px;*/
+  margin-top: 5px;
+  background-color:#00B2FF;
+  opacity: .75;
+  padding:5px;
+  color:#fff;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.controls button {
+  background: white;
+  color: #00B2FF;
+}
+
 #drawing {
    display: inline-block;
    /*border: 1px solid #cecece;*/
@@ -6,7 +45,7 @@
    position: absolute;
    top: 46px;
    left: 200px;
-   height: 100%;
+   height: 100vh;
    width: calc(100% - 400px);
    box-sizing: border-box;
 }
@@ -188,15 +227,15 @@ span.timestamp {
 
 /* ========== DRAWING BOARD ========== */
 
-#paper {
+/*#paper {*/
   /*width: 100%;
   height: 100%;
   box-sizing: border-box;*/
-  border: 1px solid #cecece;
+  /*border: 1px solid #cecece;
   box-sizing: border-box;
   background: #eaeaea;
   position: relative;
-}
+}*/
 
 @media screen and (max-width: 768px) {
   /*#drawing {

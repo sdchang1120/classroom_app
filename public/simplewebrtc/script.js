@@ -41,14 +41,14 @@ webrtc.on('videoRemoved', function (video, peer) {
 });
 
 
-function initFullScreen() {
-  var button = document.getElementById("fullscreen");
-  button.addEventListener('click', function(event) {
-    var elem = document.getElementById("videos");
-    //show full screen
-    elem.webkitRequestFullScreen();
-  });
-}
+// function initFullScreen() {
+//   var button = document.getElementById("fullscreen");
+//   button.addEventListener('click', function(event) {
+//     var elem = document.getElementById("videos");
+//     //show full screen
+//     elem.webkitRequestFullScreen();
+//   });
+// }
 
 // var peervids = document.getElementById('remoteVideos').children;
 // console.log(peervids);

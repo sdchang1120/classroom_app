@@ -155,7 +155,7 @@ io.on('connection', function (socket) {
 	// });
 
 
-  // first send new client drawing history
+  // first send the history to the new client
    for (var i in line_history) {
       socket.emit('draw_line', { line: line_history[i] } );
    }
@@ -164,7 +164,7 @@ io.on('connection', function (socket) {
    socket.on('draw_line', function (data) {
       // add received line to history
       line_history.push(data.line);
-      // emit newly recevied line to all clients
+      // send line to all clients
       io.emit('draw_line', { line: data.line });
    });
 

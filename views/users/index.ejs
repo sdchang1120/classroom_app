@@ -5,7 +5,7 @@
   <% if (login) { %>
 
     <h1>See User's Rooms:</h1>
-    <select>
+    <select id="select-user">
       <option value="">-----</option>
       <% for (var i=0; i < users.length; i++) { %>
         <option value="/users/<%=users[i]._id%>"><%= users[i].first_name %></option>
