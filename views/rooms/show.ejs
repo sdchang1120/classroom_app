@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
-    <!-- <link rel="stylesheet" href="/css/rooms.css" media="screen" title="no title" charset="utf-8"> -->
     <link rel="stylesheet" href="/simplewebrtc/style.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/css/rooms.css" media="screen" title="no title" charset="utf-8">
+    <!-- JS -->
     <script src="/js/jquery-2.2.0.min.js" charset="utf-8"></script>
     <script src="/socket.io/socket.io.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
-    <script src="/js/draw.js" charset="utf-8"></script>
     <script src="/js/chatroom.js" charset="utf-8"></script>
+    <script src="/js/draw.js" charset="utf-8"></script>
     <script src="https://simplewebrtc.com/latest-v2.js"></script>
     <script src="/simplewebrtc/script.js" charset="utf-8"></script>
   </head>
@@ -50,6 +51,7 @@
 
     </div>
 
+    <!-- videos -->
     <div class="side-panel">
       <br>Online <img class="blink" src="http://blenderartists.org/design/baorg2012dark/images/statusicon/user-online.png" />
       <h2 id="room-name"><%= room.name %></h2>
@@ -61,6 +63,7 @@
       <div id="remoteVideos"></div>
     </div>
 
+    <!-- chatbox -->
     <div id="chatbox">
       <div class="chatArea">
         <div class="messages"></div>
