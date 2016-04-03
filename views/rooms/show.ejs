@@ -27,26 +27,29 @@
       <canvas id="drawing"></canvas>
       <!-- controls for drawing canvas -->
       <div class="controls">
-        Size: <select id="selWidth">
-          <option value="1">1</option>
-          <option value="3">2</option>
-          <option value="5" selected="selected">3</option>
-          <option value="7">4</option>
-          <option value="9">5</option>
-        </select>
-        Color: <select id="selColor">
-          <option value="black" selected="selected">black</option>
-          <option value="red">red</option>
-          <option value="#F90">orange</option>
-          <option value="#FF0">yellow</option>
-          <option value="#33CC33">green</option>
-          <option value="#00B2FF">blue</option>
-          <option value="#CC00FF">purple</option>
-          <option value="#F9C">pink</option>
-          <option value="#963">brown</option>
-          <option value="gray">gray</option>
-        </select>
-        <button onclick="javascript:clearArea();return false;">Clear</button>
+        <i id="tool-icon">&#xE803;</i>
+        <div class="toolbox">
+          Size: <select id="selWidth">
+            <option value="1">1</option>
+            <option value="3">2</option>
+            <option value="5" selected="selected">3</option>
+            <option value="7">4</option>
+            <option value="9">5</option>
+          </select>
+          Color: <select id="selColor">
+            <option value="black" selected="selected">black</option>
+            <option value="red">red</option>
+            <option value="#F90">orange</option>
+            <option value="#FF0">yellow</option>
+            <option value="#33CC33">green</option>
+            <option value="#00B2FF">blue</option>
+            <option value="#CC00FF">purple</option>
+            <option value="#F9C">pink</option>
+            <option value="#963">brown</option>
+            <option value="gray">gray</option>
+          </select>
+          <button onclick="javascript:clearArea();return false;">Clear</button>
+        </div>
      </div>
 
     </div>

@@ -7,7 +7,7 @@
 #menu {
   display: none;
   text-align: center;
-  z-index: 1;
+  /*z-index: 5;*/
 }
 
 #menu li {
@@ -17,10 +17,10 @@
 
 @font-face {
   font-family: 'Fontello';
-  src: url('/font/fontello.ttf');
+  src: url('/font/cart.ttf');
 }
 
-#plus-icon, #menu-icon, #link-icon {
+#plus-icon, #menu-icon, #link-icon, #tool-icon {
   font-family: 'Fontello';
   font-style: normal;
 }
@@ -138,14 +138,18 @@ input {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 10px;
-  z-index: 1;
+  /*z-index: 1;*/
   max-width: 300px;
   margin: 0 auto;
-  padding: 25px;
+  padding-top: 46px;
 }
 
 .profile h4 {
   margin-bottom: 0px;
+}
+
+.toolbox {
+  display: none;
 }
 
 /*footer {
@@ -237,6 +241,10 @@ input {
     display: block;
     position: absolute;
     right: 20px;
+  }
+
+  #menu {
+    /*z-index: 5;*/
   }
 
 }

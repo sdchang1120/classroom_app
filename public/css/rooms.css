@@ -1,296 +1,254 @@
-/*.drawing-wrapper {
-  position: relative;
-  height: 50vh;
-  top: 46px;
-  left: 200px;
-}
-
 #drawing {
+   display: inline-block;
    background: #eaeaea;
-   box-sizing: border-box;
-   position: absolute;
-   top: 0;
-   height: 100%;
+   height: 100vh;
    width: calc(100% - 400px);
    box-sizing: border-box;
 }
 
 .controls {
   display: inline-block;
-  position: absolute;
-  top:5px;
-  left:5px;
+  position: fixed;
+  top: 45px;
+  left: 205px;
+  margin-top: 5px;
   background-color:#00B2FF;
   opacity: .75;
-  padding:5px;
+  padding: 5px 10px;
   color:#fff;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 
-#localVideo {
-    position: fixed;
-    top: 50px;
-    left: 5px;
-    opacity: .75;
-    width: 100px;
-  }*/
+.controls button {
+  background: white;
+  color: #00B2FF;
+  width: 50px;
+  padding: 0;
+  margin-left: 5px;
+}
+
+/* drawing board & video behind menu */
+#drawing {
+  /*z-index: 1;*/
+}
+
+video {
+  /*z-index: 2;*/
+}
+
+.side-panel {
+  width: 200px;
+  border-right: 1px solid #eaeaea;
+  position: fixed;
+  top: 46px;
+  left: 0;
+  height: calc(100% - 0px);
+  box-sizing: border-box;
+}
+
+#chatbox {
+  width: 200px;
+  /*margin-top: 46px;*/
+  border-left: 1px solid #eaeaea;
+  position: fixed;
+  top: 46px;
+  right: 0;
+  height: calc(100% - 80px);
+  box-sizing: border-box;
+}
+
+/* ========== CHATROOM ========== */
+
+ul, li {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+span.timestamp {
+  float: right;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Font */
+
+.messages {
+  font-size: 15px;
+}
 
 
-  /* DRAWING BOARD */
+.log {
+  color: gray;
+  font-size: 15px;
+  margin: 5px;
+  text-align: center;
+}
 
-  /*.drawing-wrapper {
-    position: relative;
-    height: 100vh;
-    width: 100vw - 400px;
-    top: 46px;
-    left: 200px;
-    background: azure;
-    overflow: auto;
-  }*/
+/* Messages */
 
-  /* #drawing {
-     background: #eaeaea;
-     box-sizing: border-box;
-     position: absolute;
-     top: 0;
-     height: 100%;
-     width: calc(100% - 400px);
-     box-sizing: border-box;
-  } */
+.chatArea {
+  height: 100%;
+  /*padding-bottom: 60px;*/
+}
 
-  #drawing {
-     display: inline-block;
-     background: #eaeaea;
-     height: 100vh;
-     width: calc(100% - 400px);
-     box-sizing: border-box;
-  }
+.messages {
+  height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 10px 20px 10px 20px;
+  box-sizing: border-box;
+}
 
-  .controls {
-    display: inline-block;
-    position: fixed;
-    top: 45px;
-    left: 205px;
-    margin-top: 5px;
-    background-color:#00B2FF;
-    opacity: .75;
-    padding: 5px 10px;
-    color:#fff;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-  }
+.message.typing .messageBody {
+  color: gray;
+}
 
-  .controls button {
-    background: white;
-    color: #00B2FF;
-    width: 50px;
-    padding: 0;
-    margin-left: 5px;
-  }
+.username {
+  float: left;
+  font-weight: 700;
+  overflow: hidden;
+  padding-right: 15px;
+  text-align: right;
+}
 
-  /* drawing board & video behind menu */
-  #drawing, video {
-    z-index: -1;
-  }
+/* Input */
+
+.inputMessage {
+  outline: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  padding: 5px;
+  margin: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.usernameInput {
+  box-sizing: border-box;
+  background: white;
+  opacity: .75;
+  margin: 0;
+  padding: 0;
+  color: black;
+  border: none;
+  text-align: center;
+}
+
+/* blink animation */
+.blink {
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  -moz-animation-name: blinker;
+  -moz-animation-duration: 3s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+
+  animation-name: blinker;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@keyframes blinker {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+/* ========== MEDIA QUERY ========== */
+
+@media screen and (max-width: 768px) {
+
 
 
   .side-panel {
-    width: 200px;
-    border-right: 1px solid #eaeaea;
-    position: fixed;
-    top: 46px;
-    left: 0;
-    height: calc(100% - 0px);
+    width: 50%;
+    height: 50%;
     box-sizing: border-box;
+    background: white;
+    border-right: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+    overflow: scroll;
+    bottom: 0;
+    top: inherit;
+    z-index: 3;
+  }
+
+  #room-name, #desc {
+    display: none;
   }
 
   #chatbox {
-    width: 200px;
-    /*margin-top: 46px;*/
-    border-left: 1px solid #eaeaea;
-    position: fixed;
-    top: 46px;
-    right: 0;
-    height: calc(100% - 80px);
-    box-sizing: border-box;
-  }
-
-  /* ========== CHATROOM ========== */
-
-  ul, li {
-    list-style: none;
-    word-wrap: break-word;
-  }
-
-  span.timestamp {
-    float: right;
-    font-size: 12px;
-    color: #999;
-  }
-
-  /* Font */
-
-  .messages {
-    font-size: 15px;
-  }
-
-
-  .log {
-    color: gray;
-    font-size: 15px;
-    margin: 5px;
-    text-align: center;
-  }
-
-  /* Messages */
-
-  .chatArea {
-    height: 100%;
-    /*padding-bottom: 60px;*/
-  }
-
-  .messages {
-    height: 100%;
-    margin: 0;
-    overflow-y: scroll;
-    padding: 10px 20px 10px 20px;
-    box-sizing: border-box;
-  }
-
-  .message.typing .messageBody {
-    color: gray;
-  }
-
-  .username {
-    float: left;
-    font-weight: 700;
-    overflow: hidden;
-    padding-right: 15px;
-    text-align: right;
-  }
-
-  /* Input */
-
-  .inputMessage {
-    outline: none;
-    position: fixed;
+    width: 50%;
+    height: calc(50% - 34px);
+    display: block;
+    top: inherit;
     right: 0;
     bottom: 0;
-    width: 200px;
-    padding: 5px;
-    margin: 0;
-    border-radius: 0;
+    margin-bottom: 34px;
+    background: white;
     box-sizing: border-box;
+    border-left: none;
+    border-top: 1px solid #eaeaea;
+  }
+
+  #localVideo {
+    position: fixed;
+    top: 50px;
+    bottom: 50px;
+    left: 5px;
+    opacity: .75;
+    width: 100px;
+    /*z-index: 3;*/
+  }
+
+  #remoteVideos {
+    width: 100%;
   }
 
   .usernameInput {
-    box-sizing: border-box;
-    background: white;
-    opacity: .75;
-    margin: 0;
-    padding: 0;
-    color: black;
-    border: none;
-    text-align: center;
+    width: 100%;
   }
 
-  /* blink animation */
-  .blink {
-    -webkit-animation-name: blinker;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-
-    -moz-animation-name: blinker;
-    -moz-animation-duration: 3s;
-    -moz-animation-timing-function: linear;
-    -moz-animation-iteration-count: infinite;
-
-    animation-name: blinker;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+  .inputMessage {
+    width: 50%;
   }
 
-  @-moz-keyframes blinker {
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
+  #drawing {
+    width: 100vw;
+    height: 50vh;
   }
 
-  @-webkit-keyframes blinker {
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
+  .controls {
+    right: 5px;
+    left: inherit;
+    z-index: 0;
   }
 
-  @keyframes blinker {
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
+  .drawing-wrapper {
+    z-index: -100;
   }
 
-
-  @media screen and (max-width: 768px) {
-
-  	.side-panel {
-      width: 50%;
-      height: 50%;
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      background: white;
-      overflow: scroll;
-      box-sizing: border-box;
-      border-right: 1px solid #eaeaea;
-      border-top: 1px solid #eaeaea;
-    }
-
-    #room-name, #desc {
-      display: none;
-    }
-
-    #chatbox {
-      width: 50%;
-      height: calc(50% - 34px);
-      display: block;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      margin-bottom: 34px;
-      background: white;
-      box-sizing: border-box;
-      border-left: none;
-      border-top: 1px solid #eaeaea;
-    }
-
-    #localVideo {
-      position: fixed;
-      top: 50px;
-      left: 5px;
-      opacity: .75;
-      width: 100px;
-    }
-
-    #remoteVideos {
-      width: 100%;
-    }
-
-    .usernameInput {
-      width: 100%;
-    }
-
-    .inputMessage {
-      width: 50%;
-    }
-
-    #drawing {
-      position: absolute;
-      width: 100%;
-      left: 0;
-      height: 50%;
-    }
-
+  #menu {
+    z-index: 100;
   }
+
+}

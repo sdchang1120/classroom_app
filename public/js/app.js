@@ -29,4 +29,10 @@ $(function() {
     $(this).css('border-color', '#eaeaea');
   });
 
+  $('.controls').hover(function() {
+    $('.toolbox').css('display', 'inline-block')
+  }, function() {
+    $('.toolbox').css('display', 'none')
+  })
+
 })
