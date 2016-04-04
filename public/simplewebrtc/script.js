@@ -15,26 +15,26 @@ var webrtc = new SimpleWebRTC({
     //   ]
     // }
 
-    // peerConnectionConfig: {
-    //   iceServers: [ {
-    //     url:'stun:stunserver.org'}, {
-    //       url: 'turn:192.158.29.39:3478?transport=tcp',
-    //       credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
-    //       username: '28224511:1379330808'
-    //     }
-    //   ]}
+    peerConnectionConfig: {
+      iceServers: [ {
+        url:'stun:stunserver.org'}, {
+          url: 'turn:192.158.29.39:3478?transport=tcp',
+          credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+          username: '28224511:1379330808'
+        }
+      ]}
 
-    var stun = {
-      'url': 'stun:myserver.com:3478'
-    };
-
-    var turn = {
-      'url': 'turn:myserver.com:3478',
-      'username': 'mysuser@myrealm',
-      'credential': 'mypassword'
-    };
-
-    peerConnectionConfig: { 'iceServers': [stun, turn] }
+    // var stun = {
+    //   'url': 'stun:myserver.com:3478'
+    // };
+    //
+    // var turn = {
+    //   'url': 'turn:myserver.com:3478',
+    //   'username': 'mysuser@myrealm',
+    //   'credential': 'mypassword'
+    // };
+    //
+    // peerConnectionConfig: { 'iceServers': [stun, turn] }
 
 
 });
