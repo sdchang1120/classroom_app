@@ -1,6 +1,8 @@
 <% include ../partials/head %>
 <% include ../partials/navbar %>
+
 <div class="container fadeIn">
+  
   <p id="user_id" style="display: none"><%= user.id %></p>
   <h1><%= user.first_name %>'s Rooms</h1>
 
@@ -17,5 +19,7 @@
   <% for (var i=0; i < user.rooms.length; i++) { %>
     <a href="/rooms/<%= user.rooms[i]._id %>"><%= user.rooms[i].name %></a>
   <% } %>
+
 </div>
+
 <% include ../partials/footer %>

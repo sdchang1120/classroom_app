@@ -1,8 +1,11 @@
 <nav>
+
+  <!-- menu icon -->
   <a href="#menu" class="menu-link">
     <i id="menu-icon">&#xE801;</i>
-    <!-- <img id="menu-button" src="http://52media.ca/images/menu-icon-small.png" alt="" /> -->
   </a>
+
+  <!-- menu - desktop mode -->
   <div class="desktop-menu">
     <a id="home-page" href="/" style="font-size: 18px">OurSpace</a>
     <a id="about-page" href="/about">About</a>
@@ -10,8 +13,6 @@
       <a id="signup-page" href="/signup">Sign Up</a>
       <a id="login-page" href="/login">Log In</a>
     <% } %>
-    <!-- <a href="/rooms">ALL ROOMS</a>
-    <a href="/users">ALL USERS</a> -->
     <% if (login) { %>
       <a id="rooms-page" href="/rooms">All Rooms</a>
       <a id="users-page" href="/users">All Users</a>
@@ -21,18 +22,20 @@
       </div>
     <% } %>
   </div>
+
+  <!-- menu - responsive -->
   <div id="menu">
-    <!-- <li><a href="/">Home</a></li> -->
     <li><a href="/about">About</a></li>
     <% if (!login) { %>
       <li><a href="/signup">Sign Up</a></li>
       <li><a href="/login">Log In</a></li>
     <% } %>
     <% if (login) { %>
-    <li><a href="/rooms">All Rooms</a></li>
-    <li><a href="/users">All Users</a></li>
-    <li><a href="/users/<%=userLogin.id%>/profile">Profile</a></span></li>
-    <li><a id="logout" href="/users/logout">Logout</a></li>
+      <li><a href="/rooms">All Rooms</a></li>
+      <li><a href="/users">All Users</a></li>
+      <li><a href="/users/<%=userLogin.id%>/profile">Profile</a></span></li>
+      <li><a id="logout" href="/users/logout">Logout</a></li>
     <% } %>
   </div>
+
 </nav>
