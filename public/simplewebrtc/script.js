@@ -8,12 +8,6 @@ var webrtc = new SimpleWebRTC({
 
     var stun = {url:'stun:stunserver.org'}
 
-    var turn = {
-      url: 'turn:192.158.29.39:3478?transport=tcp',
-      credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
-      username: '28224511:1379330808'
-    }
-
     peerConnectionConfig: {
       iceServers: [
         {url:'stun:stunserver.org'},
