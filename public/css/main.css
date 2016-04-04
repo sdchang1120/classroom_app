@@ -1,28 +1,8 @@
-/* Menu stuff */
-
-.menu-link {
-  display: none;
-}
-
-#menu {
-  display: none;
-  text-align: center;
-  /*z-index: 5;*/
-}
-
-#menu li {
-  display: block;
-  margin: 0 auto;
-}
+/* Font */
 
 @font-face {
   font-family: 'Fontello';
   src: url('/font/cart.ttf');
-}
-
-#plus-icon, #menu-icon, #link-icon, #tool-icon {
-  font-family: 'Fontello';
-  font-style: normal;
 }
 
 @font-face {
@@ -34,6 +14,8 @@
   font-family: 'Brandon Med';
   src: url('/font/Brandon_med.otf');
 }
+
+/* Main */
 
 html {
   margin: 0;
@@ -61,10 +43,6 @@ nav {
   text-align: left;
 }
 
-.container {
-  padding: 46px;
-}
-
 h1, h2, h3, h4 {
   text-transform: uppercase;
   font-family: 'Brandon Med';
@@ -90,6 +68,10 @@ nav a:hover, nav span {
 
 .right-nav-div li {
   display: inline-block;
+}
+
+.container {
+  padding: 46px;
 }
 
 a {
@@ -148,8 +130,26 @@ input {
   margin-bottom: 0px;
 }
 
-.toolbox {
+/* Menu Stuff */
+
+.menu-link {
   display: none;
+}
+
+#menu {
+  display: none;
+  text-align: center;
+  /*z-index: 5;*/
+}
+
+#menu li {
+  display: block;
+  margin: 0 auto;
+}
+
+#plus-icon, #menu-icon, #link-icon, #tool-icon {
+  font-family: 'Fontello';
+  font-style: normal;
 }
 
 /*footer {
@@ -160,6 +160,8 @@ input {
   color: #AEDEF5;
   width: 100%;
 }*/
+
+/* Animations */
 
 /* Source: https://daneden.github.io/animate.css/ */
 @keyframes bounceInDown {
@@ -226,7 +228,8 @@ input {
   -webkit-animation: fadeIn .5s ease-in;
 }
 
-/* media query for tablets and mobile */
+/* ========== Media Query ========== */
+
 @media only screen and (max-width: 768px) {
 
   /*input {

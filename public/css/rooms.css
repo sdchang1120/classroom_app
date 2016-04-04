@@ -1,6 +1,4 @@
-video {
-  /*z-index: 2;*/
-}
+/* ========== Side Panel ========== */
 
 .side-panel {
   width: 200px;
@@ -12,6 +10,45 @@ video {
   box-sizing: border-box;
 }
 
+/* ========== Drawing Canvas ========== */
+
+#drawing {
+   display: inline-block;
+   background: #eaeaea;
+   height: 100vh;
+   width: calc(100% - 400px);
+   box-sizing: border-box;
+}
+
+.controls {
+  display: inline-block;
+  position: fixed;
+  top: 45px;
+  left: 205px;
+  margin-top: 5px;
+  background-color:#00B2FF;
+  opacity: .75;
+  padding: 5px 10px;
+  color:#fff;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.controls button {
+  background: white;
+  color: #00B2FF;
+  width: 50px;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.toolbox {
+  display: none;
+}
+
+/* ========== Chatroom ========== */
+
+/* chatroom div */
 #chatbox {
   width: 200px;
   /*margin-top: 46px;*/
@@ -22,8 +59,6 @@ video {
   height: calc(100% - 80px);
   box-sizing: border-box;
 }
-
-/* ========== CHATROOM ========== */
 
 ul, li {
   list-style: none;
@@ -95,7 +130,7 @@ span.timestamp {
   text-align: center;
 }
 
-/* blink animation */
+/* ========== Animation ========== */
 
 .blink {
   -webkit-animation-name: blinker;
@@ -132,43 +167,11 @@ span.timestamp {
   100% { opacity: 1.0; }
 }
 
-/* ========== DRAWING CANVAS ========== */
-
-#drawing {
-   display: inline-block;
-   background: #eaeaea;
-   height: 100vh;
-   width: calc(100% - 400px);
-   box-sizing: border-box;
-}
-
-.controls {
-  display: inline-block;
-  position: fixed;
-  top: 45px;
-  left: 205px;
-  margin-top: 5px;
-  background-color:#00B2FF;
-  opacity: .75;
-  padding: 5px 10px;
-  color:#fff;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-
-.controls button {
-  background: white;
-  color: #00B2FF;
-  width: 50px;
-  padding: 0;
-  margin-left: 5px;
-}
-
-/* ========== MEDIA QUERY ========== */
+/* ========== Media Query ========== */
 
 @media screen and (max-width: 768px) {
 
-
+  /* Side Panel */
 
   .side-panel {
     width: 50%;
@@ -181,24 +184,6 @@ span.timestamp {
     bottom: 0;
     top: inherit;
     z-index: 3;
-  }
-
-  #room-name, #desc {
-    display: none;
-  }
-
-  #chatbox {
-    width: 50%;
-    height: calc(50% - 34px);
-    display: block;
-    top: inherit;
-    right: 0;
-    bottom: 0;
-    margin-bottom: 34px;
-    background: white;
-    box-sizing: border-box;
-    border-left: none;
-    border-top: 1px solid #eaeaea;
   }
 
   #localVideo {
@@ -215,13 +200,11 @@ span.timestamp {
     width: 100%;
   }
 
-  .usernameInput {
-    width: 100%;
+  #room-name, #desc {
+    display: none;
   }
 
-  .inputMessage {
-    width: 50%;
-  }
+  /* Drawing Room */
 
   #drawing {
     width: 100vw;
@@ -238,8 +221,28 @@ span.timestamp {
     z-index: -100;
   }
 
-  #menu {
-    z-index: 100;
+  /* Chatroom */
+
+  #chatbox {
+    width: 50%;
+    height: calc(50% - 34px);
+    display: block;
+    top: inherit;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 34px;
+    background: white;
+    box-sizing: border-box;
+    border-left: none;
+    border-top: 1px solid #eaeaea;
+  }
+
+  .usernameInput {
+    width: 100%;
+  }
+
+  .inputMessage {
+    width: 50%;
   }
 
 }
