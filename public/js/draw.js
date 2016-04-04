@@ -1,10 +1,10 @@
 console.log('draw.js');
 
 // More on canvas drawing here: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
-var lastX, lastY;
+// var lastX, lastY;
 var context;
 
-$(function(){
+$(window).load(function(){
 
 	var mouse = {
 	  click: false,
@@ -14,7 +14,7 @@ $(function(){
 	};
 	// get canvas element and create context
 	var canvas  = document.getElementById('drawing');
-	var context = canvas.getContext('2d');
+	context = canvas.getContext('2d');
 	var width   = $(window).width() - 400;
 	//  console.log('CANVAS WIDTH:', width);
 	var height  = $(window).height() - 46;
@@ -78,8 +78,7 @@ $(function(){
 });
 
 function clearArea() {
-  // Use the identity matrix while clearing the canvasas
+  // Use the identity matrix while clearing the canvas
   context.setTransform(1, 0, 0, 1, 0, 0);
-  // context.clearRect(0, 0, context.canvasas.width, context.canvasas.height);
-	context.clearRect(0, 0, canvas.width, canvas.height);
+  context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 }
