@@ -1,38 +1,3 @@
-#drawing {
-   display: inline-block;
-   background: #eaeaea;
-   height: 100vh;
-   width: calc(100% - 400px);
-   box-sizing: border-box;
-}
-
-.controls {
-  display: inline-block;
-  position: fixed;
-  top: 45px;
-  left: 205px;
-  margin-top: 5px;
-  background-color:#00B2FF;
-  opacity: .75;
-  padding: 5px 10px;
-  color:#fff;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-
-.controls button {
-  background: white;
-  color: #00B2FF;
-  width: 50px;
-  padding: 0;
-  margin-left: 5px;
-}
-
-/* drawing board & video behind menu */
-#drawing {
-  /*z-index: 1;*/
-}
-
 video {
   /*z-index: 2;*/
 }
@@ -71,13 +36,6 @@ span.timestamp {
   color: #999;
 }
 
-/* Font */
-
-.messages {
-  font-size: 15px;
-}
-
-
 .log {
   color: gray;
   font-size: 15px;
@@ -89,10 +47,10 @@ span.timestamp {
 
 .chatArea {
   height: 100%;
-  /*padding-bottom: 60px;*/
 }
 
 .messages {
+  font-size: 15px;
   height: 100%;
   margin: 0;
   overflow-y: scroll;
@@ -112,8 +70,6 @@ span.timestamp {
   text-align: right;
 }
 
-/* Input */
-
 .inputMessage {
   outline: none;
   position: fixed;
@@ -125,6 +81,8 @@ span.timestamp {
   border-radius: 0;
   box-sizing: border-box;
 }
+
+/* Input */
 
 .usernameInput {
   box-sizing: border-box;
@@ -138,6 +96,7 @@ span.timestamp {
 }
 
 /* blink animation */
+
 .blink {
   -webkit-animation-name: blinker;
   -webkit-animation-duration: 3s;
@@ -171,6 +130,38 @@ span.timestamp {
   0% { opacity: 1.0; }
   50% { opacity: 0.0; }
   100% { opacity: 1.0; }
+}
+
+/* ========== DRAWING CANVAS ========== */
+
+#drawing {
+   display: inline-block;
+   background: #eaeaea;
+   height: 100vh;
+   width: calc(100% - 400px);
+   box-sizing: border-box;
+}
+
+.controls {
+  display: inline-block;
+  position: fixed;
+  top: 45px;
+  left: 205px;
+  margin-top: 5px;
+  background-color:#00B2FF;
+  opacity: .75;
+  padding: 5px 10px;
+  color:#fff;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.controls button {
+  background: white;
+  color: #00B2FF;
+  width: 50px;
+  padding: 0;
+  margin-left: 5px;
 }
 
 /* ========== MEDIA QUERY ========== */

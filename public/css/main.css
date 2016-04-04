@@ -62,7 +62,7 @@ nav {
 }
 
 .container {
-  padding-top: 46px;
+  padding: 46px;
 }
 
 h1, h2, h3, h4 {
@@ -141,7 +141,7 @@ input {
   /*z-index: 1;*/
   max-width: 300px;
   margin: 0 auto;
-  padding-top: 46px;
+  padding: 46px;
 }
 
 .profile h4 {
