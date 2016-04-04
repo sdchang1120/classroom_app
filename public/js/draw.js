@@ -15,10 +15,10 @@ $(window).load(function(){
 	// get canvas element and create context
 	var canvas  = document.getElementById('drawing');
 	context = canvas.getContext('2d');
+
 	var width   = $(window).width() - 400;
-	//  console.log('CANVAS WIDTH:', width);
 	var height  = $(window).height() - 46;
-	//  console.log('CANVAS HEIGHT:', height);
+	
 	var socket  = io.connect();
 
 	// set canvas to full browser width/height
