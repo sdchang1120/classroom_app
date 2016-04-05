@@ -18,11 +18,10 @@ var webrtc = new SimpleWebRTC({
     // peerConnectionConfig: { iceServers: [ {url:'stun:stunserver.org'}, {url: 'turn:192.158.29.39:3478?transport=tcp', credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=', username: '28224511:1379330808'} ]}
 
     peerConnectionConfig: {
-      iceServers: [ {
-        url:'stun:stun.l.google.com:19302'}, {
-        url: 'turn:192.158.29.39:3478?transport=tcp',
-        credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
-        username: '28224511:1379330808'}
+      iceServers: [
+        {urls: "stun:23.21.150.121"},
+        {urls: "stun:stun.l.google.com:19302"},
+        {urls: "turn:numb.viagenie.ca", credential: "webrtcdemo", username: "louis%40mozilla.com"}
       ]
     }
 
