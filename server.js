@@ -15,9 +15,8 @@ var express        = require('express'),
     port           = process.env.PORT || 3000,
     app            = express(),
     http           = require('http').Server(app),
-    io             = require('socket.io')(http);
-
-    User           = require('./models/users');
+    io             = require('socket.io')(http),
+    freeice        = require('freeice');
 
 // ==============================
 //           MIDDLEWARE
