@@ -1,5 +1,7 @@
 $(function() {
 
+  // Responsive Menu Function
+
   var $menu = $('#menu');
   var $menulink = $('.menu-link');
 
@@ -15,6 +17,8 @@ $(function() {
   //   console.log('Message from the server: ', msg);
   // });
 
+  // Select User Function
+
   $('#select-user').change(function(){
     var url = $(this).val();
 		// console.log(url);
@@ -22,12 +26,15 @@ $(function() {
     window.location = url;
 	});
 
-  // input hover effect
+  // Input Box Hover Efect
+
   $('input').hover(function() {
     $(this).css('border-color', '#09B2E9');
   }, function() {
     $(this).css('border-color', '#eaeaea');
   });
+
+  // Toolbox Hover Effect
 
   $('.controls').hover(function() {
     $('.toolbox').css('display', 'inline-block')

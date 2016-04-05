@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 var roomSchema = require('./rooms').schema;
 
-// USER'S SCHEMA
+// USERS SCHEMA
 var userSchema = mongoose.Schema({
 	username: {type: String, required: true, unique: true},
   first_name: {type: String, required: true},
