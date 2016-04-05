@@ -50,6 +50,17 @@ h1, h2, h3, h4 {
   color: #11BAEE;
 }
 
+.img-div {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 175px;
+  margin: 30px;
+}
+
+.img-div img {
+  width: 100%;
+}
+
 nav a {
   text-decoration: none;
   color: #AEDEF5;

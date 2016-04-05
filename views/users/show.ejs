@@ -17,7 +17,7 @@
 
   <!-- User's Rooms -->
   <% for (var i=0; i < user.rooms.length; i++) { %>
-    <a href="/rooms/<%= user.rooms[i]._id %>"><%= user.rooms[i].name %></a>
+    <p><a href="/rooms/<%= user.rooms[i]._id %>"><%= user.rooms[i].name %></a><p>
   <% } %>
 
 </div>
