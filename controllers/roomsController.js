@@ -7,10 +7,10 @@ var User    = require('../models/users'),
 
 // ROOMS - INDEX
 router.get('/', isLoggedIn, function(req, res) {
-res.locals.login = req.isAuthenticated();
-  Room.find(function(err, rooms) {
-    res.render('rooms/index.ejs', { rooms: rooms, userLogin: req.user });
-  });
+  res.locals.login = req.isAuthenticated();
+  User.aggregate({$unwind: '$rooms'}, {$group: {_id: '$rooms._id', name: {$addToSet: '$rooms.name'}, uid: {$addToSet: '$_id'}, first_name: {$addToSet: '$first_name'}}}, function(err, data) {
+    res.render('rooms/index.ejs', { rooms: data, userLogin: req.user });
+  })
 });
 
 // ROOMS - SHOW

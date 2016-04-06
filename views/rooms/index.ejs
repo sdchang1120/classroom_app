@@ -5,10 +5,19 @@
 
 	<h1>All Rooms</h1>
 
-	<div id="all-rooms-container">
+	<!-- <div id="all-rooms-container">
 		<% for (var i=0; i < rooms.length; i++) { %>
 			<div class="location">
 				<p><a href="/rooms/<%=rooms[i]._id%>"><%= rooms[i].name %></a></p>
+			</div>
+		<% } %>
+	</div> -->
+	<div id="all-rooms-container">
+		<% for (var i=0; i < rooms.length; i++) { %>
+			<div class="location">
+				<p><a href="/rooms/<%=rooms[i]._id%>"><%= rooms[i].name %></a>
+					<br><span style="color: #cecece;"> created by <a href="/users/<%= rooms[i].uid %>" style="font-family: 'Brandon'; text-transform: capitalize;"><%= rooms[i].first_name %></a></span>
+				</p>
 			</div>
 		<% } %>
 	</div>
