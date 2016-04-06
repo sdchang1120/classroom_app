@@ -153,6 +153,14 @@ select {
 
 /* Menu Stuff */
 
+.right-nav-div li a {
+  color: white;
+}
+
+.right-nav-div li span {
+  font-family: 'Brandon';
+}
+
 .menu-link {
   display: none;
 }
