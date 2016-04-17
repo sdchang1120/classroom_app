@@ -1,6 +1,4 @@
-# [OurSpace App](https://ourspace.herokuapp.com/)
-
-# Description
+# OurSpace App
 
 OurSpace is a collaborative space with real-time video, chat and drawing board for an interactive experience for educational or leisurely purposes.
 
@@ -31,5 +29,5 @@ OurSpace is a collaborative space with real-time video, chat and drawing board f
 
 # Note
 
-* WebRTC is fairly new technology and there aren't many solutions that allow peers to connect over a deployed version. A [STUN and TURN](https://www.twilio.com/docs/api/stun-turn/faq) server needs to be set up for this to work. 
+* WebRTC is fairly new technology and there aren't many solutions that allow peers to connect over a deployed version. A [STUN and TURN](https://www.twilio.com/docs/api/stun-turn/faq) server needs to be set up for this to work.
 * Video and Drawing Board currently not supported for mobile just yet
