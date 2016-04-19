@@ -1,17 +1,21 @@
 <% include ../partials/head %>
 <% include ../partials/navbar %>
 
-<div class="container bounceInDown">
+<div class="vertical-align">
 
-  <h3>Log In</h3>
+  <div class="container bounceInDown">
 
-  <form action="/login" method="POST">
-    <input type="text" name="username" placeholder="Username" value="guest"><br>
-    <input type="password" name="password" placeholder="Password" value="guest"><br>
-    <button>Log In</button>
-  </form>
+    <h3>Log In</h3>
 
-  <p>New user? Sign up <a href="/signup">here</a>.</p>
+    <form action="/login" method="POST">
+      <input type="text" name="username" placeholder="Username" value="guest"><br>
+      <input type="password" name="password" placeholder="Password" value="guest"><br>
+      <button>Log In</button>
+    </form>
+
+    <p>New user? Sign up <a href="/signup">here</a>.</p>
+
+  </div>
 
 </div>
 

@@ -82,7 +82,9 @@ nav a:hover, nav span {
 }
 
 .container {
-  padding: 46px;
+  padding: 46px 10px 30px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 a {
@@ -179,6 +181,13 @@ select {
 #plus-icon, #menu-icon, #link-icon, #tool-icon {
   font-family: 'Fontello';
   font-style: normal;
+}
+
+/* vertical-align div */
+.vertical-align {
+  display: flex; /* centers caption div */
+	align-items: center; /* centers caption div */
+  height: 100%;
 }
 
 /*footer {
