@@ -2,9 +2,9 @@
 
 OurSpace is a collaborative space with real-time video, chat and drawing board for an interactive experience for educational or leisurely purposes.
 
-⋅⋅⋅[Guest Login]⋅⋅⋅
-⋅⋅⋅Username: guest⋅⋅⋅
-⋅⋅⋅Password: guest⋅⋅⋅
+⋅⋅⋅[Guest Login]⋅⋅
+⋅⋅⋅Username: guest⋅⋅
+⋅⋅⋅Password: guest⋅⋅
 
 # Features
 
