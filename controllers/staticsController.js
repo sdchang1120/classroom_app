@@ -1,6 +1,7 @@
 // REQUIREMENTS
-var express = require('express'),
-    router  = express.Router();
+var express  = require('express'),
+    passport = require('passport'),
+    router   = express.Router();
 
 var User    = require('../models/users');
 
@@ -34,6 +35,26 @@ router.get('/login', function(req, res) {
   User.find(function(err, users) {
     res.render('static/login.ejs', { users: users, userLogin: req.user });
   });
+});
+
+// SIGNUP - CREATE NEW USER
+router.post('/', passport.authenticate('local-signup', {
+  failureRedirect: '/users' }), function(req, res) {
+    //success redirect goes to show page
+    res.redirect('/users/' + req.user.id);
+});
+
+// LOGIN EXISTING USER
+router.post('/login', passport.authenticate('local-login', {
+	failureRedirect: '/login' }), function(req, res) {
+    // success redirect goes to show page
+    res.redirect('/users/' + req.user.id);
+});
+
+// LOGOUT
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
 });
 
 // MIDDLEWARE TO CHECK LOGIN STATUS

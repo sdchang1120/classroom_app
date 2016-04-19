@@ -1,6 +1,5 @@
 // REQUIREMENTS
 var express  = require('express'),
-		passport = require('passport'),
     router   = express.Router();
 
 var User     = require('../models/users'),
@@ -46,12 +45,6 @@ router.put('/:id/profile', isLoggedIn, function(req, res) {
   });
 });
 
-// LOGOUT
-router.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
-});
-
 // USERS - SHOW - IF LOGGED IN
 router.get('/:id', isLoggedIn, function(req, res) {
   // for user control flow within template (enables editing only on the user's own page)
@@ -75,20 +68,6 @@ router.post('/:id/newroom', function(req, res) {
 			});
 		});
 	});
-});
-
-// SIGNUP - CREATE NEW USER
-router.post('/', passport.authenticate('local-signup', {
-  failureRedirect: '/users' }), function(req, res) {
-    //success redirect goes to show page
-    res.redirect('/users/' + req.user.id);
-});
-
-// LOGIN
-router.post('/login', passport.authenticate('local-login', {
-	failureRedirect: '/login' }), function(req, res) {
-    // success redirect goes to show page
-    res.redirect('/users/' + req.user.id);
 });
 
 // DELETE USER
