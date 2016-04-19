@@ -21,6 +21,7 @@ OurSpace is a collaborative space with real-time video, chat and drawing board f
 * MongoDB
 * Socket.io
 * WebRTC
+* HTML5 Canvas
 
 # Future Implementations
 

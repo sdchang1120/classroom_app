@@ -18,7 +18,7 @@ $(window).load(function(){
 
 	var width   = $(window).width() - 400;
 	var height  = $(window).height() - 46;
-	
+
 	var socket  = io.connect();
 
 	// set canvas to full browser width/height
