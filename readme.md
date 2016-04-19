@@ -26,7 +26,7 @@ OurSpace is a collaborative space with real-time video, chat and drawing board f
 # Future Implementations
 
 * Real-time collaborative document
-* Mobile support
+* Mobile support for video and touch-enabled drawing board
 
 # Note
 
