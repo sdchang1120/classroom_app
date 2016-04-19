@@ -4,7 +4,7 @@ OurSpace is a collaborative space with real-time video, chat and drawing board f
 
 # Features
 
-* User must log in to create a room and see other rooms. You can test with username: 'test' and password 'test'
+* User must log in to create a room and see other rooms. You can test with username: 'guest' and password 'guest'
 * Real-time video
 * Real-time chat
 * Real-time drawing board with options to change pen size and color and clear board
